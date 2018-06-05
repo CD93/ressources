@@ -1,0 +1,24 @@
+
+<B_liste>
+	#ANCRE_PAGINATION
+	<h3>#GRAND_TOTAL ressources</h3>
+	<hr/>
+	<div class="row enune">
+	<BOUCLE_liste(ARTICLES){enfants}{!par date}{pagination}>
+		<div class="col-md-24">
+		<article role="article">
+			<header>
+				<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+			</header>
+			<div class="content">
+			[(#CHAPO|couper{150})]
+			<p class="date_pub">Publié le <time datetime="#DATE" pubdate="pubdate">[(#DATE|affdate)]</time></p>
+				<a class="btn adroite suite" href="#URL_ARTICLE">Lire la suite</a>
+			</div>
+		</article>
+			<hr class="break"/>
+		</div>					
+	</BOUCLE_liste>
+	</div>
+	[<nav class="pagination ajax">(#PAGINATION)</nav>]
+	</B_liste>

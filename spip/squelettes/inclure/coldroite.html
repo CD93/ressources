@@ -1,0 +1,17 @@
+<div class="col-md-5 liste_ressources">
+	<aside role="complementary">
+		<B_ressources>
+		#ANCRE_PAGINATION
+		<h3>Dernières ressources mises en ligne</h3>
+
+		<BOUCLE_ressources(ARTICLES){!par date}{id_rubrique !IN 1,2,62}{pagination 6}{"<hr/>"}>
+			<article role="article">
+				<p class="theme">#INFO_TITRE{rubrique,#ID_RUBRIQUE}</p>
+				<h4><a href="#URL_ARTICLE">#TITRE</a></h4>
+				<p class="date_aut">Publié le <time datetime="#DATE" pubdate="pubdate">[(#DATE|affdate)]</time></p>
+			</article>
+		</BOUCLE_ressources>
+	[<nav class="pagination ajax">(#PAGINATION)</nav>]
+	</B_ressources>
+	</aside>
+</div>

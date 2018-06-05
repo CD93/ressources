@@ -1,0 +1,21 @@
+<INCLURE{fond=inclure/header} />
+<body role="document">
+	<div class="container" >
+		<INCLURE{fond=inclure/tetiere} />
+		<div class="row">
+			<INCLURE{fond=inclure/colgauche} />
+			<div class="col-md-14">
+			[(#FORMULAIRE_INSCRIPTION{6forum})]
+			</div>
+			<INCLURE{fond=inclure/coldroite}{env}{ajax} />
+		</div>
+	</div>
+	<footer>
+		<INCLURE{fond=inclure/footer}{env}{ajax} />
+	</footer>
+</body>	
+<script type="text/javascript">
+	$.cookie('alerte_mdp', 'oui', { expires: 30, path: '/' });
+</script>	
+</html>
+	

@@ -1,0 +1,38 @@
+<div class="enune">
+<BOUCLE_une(ARTICLES){id_rubrique=61}{!par date}{0,1}>
+<div class="art_une"
+<article role="article">
+	<header>
+		<div class="intro_img">
+		[<a href="#URL_ARTICLE"><img src="#URL_SITE_SPIP/(#LOGO_ARTICLE|extraire_attribut{src})" alt="photo de profil"></a>]
+			<p class="alaune">à la une</p>
+		</div>
+		<h1><a href="#URL_ARTICLE">#TITRE</a></h1>
+	</header>
+	<div class="content">
+		#CHAPO
+		<a class="btn suite" href="#URL_ARTICLE">Lire la suite</a>
+	</div>
+</article>
+</div>
+</BOUCLE_une>
+<B_autre>
+<div class="infosupp row">
+<BOUCLE_autre(ARTICLES){id_rubrique=61}{!par date}{1,3}>
+	<div class="col-md-8">
+	<article role="article">
+		<header>
+			[(#LOGO_ARTICLE|center|#URL_ARTICLE||inserer_attribut{alt,#TITRE})]
+			<p class="date_pub">Publié le <time datetime="#DATE" pubdate="pubdate">[(#DATE|affdate)]</time>
+			<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+		</header>
+		<div class="content">
+			<a class="btn suite" href="#URL_ARTICLE">Lire la suite</a>
+		</div>
+	</article>
+	</div>
+</BOUCLE_autre>
+</div>
+</B_autre>
+
+</div>

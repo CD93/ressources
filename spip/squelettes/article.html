@@ -1,0 +1,64 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<INCLURE{fond=inclure/header}/>
+	<body role="document">
+		<div class="container" >
+			<INCLURE{fond=inclure/tetiere} />
+			<div class="row">
+				<INCLURE{fond=inclure/colgauche} />
+				<div class="col-md-14">
+					<article role="article">
+					<header>
+						#LOGO_ARTICLE
+						<div id="ariane">
+							<BOUCLE_stag(HIERARCHIE){id_article}{tout}{0,1}>
+							Dans <a href="#URL_RUBRIQUE"> #TITRE </a>
+							</BOUCLE_stag>
+							<B_polyhier_rub>
+							<br/>Également dans
+							<BOUCLE_polyhier_rub(RUBRIQUES){parents_indirects}{tout}{" / "}>
+							<a href="#URL_RUBRIQUE"> #TITRE </a>
+							</BOUCLE_polyhier_rub>
+						</div>
+						<h1 class="#EDIT{titre}">#TITRE</h1>
+						<p class="date_aut">Publié le <time datetime="#DATE" pubdate="pubdate">[(#DATE|affdate)]</time>
+						par <cite><BOUCLE_aut(MOTS){id_groupe=8}{id_article}><a href="#URL_MOT">#TITRE</a></BOUCLE_aut></cite>
+						</p>
+						<p class="motcle">
+						Mots-clés : <BOUCLE_mc(MOTS){id_groupe=5}{id_article}><a href="#URL_MOT">#TITRE</a>
+						</BOUCLE_mc>
+						</p>
+						<div class="favomail">
+							#FORMULAIRE_FAVORI #TIPAFRIEND
+						</div>
+					</header>
+					<div class="content">
+						<div class="chapo #EDIT{chapo}">#CHAPO</div>
+						<div class="texte #EDIT{texte}">#TEXTE</div>
+						<B_docs>
+							<div class="docs">
+								<h3>Document(s) &agrave; t&eacute;l&eacute;charger</h3>
+								<BOUCLE_docs(DOCUMENTS){id_article}{"<hr/>"}{doublons}{vu=non}{mode=document}>
+								<div class="row">
+									<div class="col-md-2 #EDIT{fichier}">
+									[(#LOGO_DOCUMENT|#URL_DOCUMENT)]
+									</div>
+									<div class="col-md-22">
+									<a href="#URL_DOCUMENT">#TITRE</a>
+									<em>[(#TAILLE|taille_en_octets)] - [(#EXTENSION)] </em>
+									</div>
+								</div>
+								</BOUCLE_docs>
+							</div>
+						</B_docs>
+					</div>
+				</article>
+				</div>
+				<INCLURE{fond=inclure/coldroite}{env}{ajax} />
+			</div>
+		</div>
+		<footer>
+			<INCLURE{fond=inclure/footer}{env}{ajax} />
+		</footer>
+	</body>
+</html>
+</BOUCLE_article>

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+	<hr/>
+	<center><h1 class="logo_crp">Le centre de ressources des partenaires de la Seine-Saint-Denis</h1></center>
+	<hr/>
+	<div class="row">
+		<BOUCLE_secteur(RUBRIQUES){racine}{id_rubrique IN 9,31,16,11}{tout}>
+			<div class="col-md-6">
+				<a href="#URL_RUBRIQUE"><h3>#TITRE</h3></a>
+				<B_srub>
+					<ul>
+					<BOUCLE_srub(RUBRIQUES){id_parent}{tout}>
+						<li>
+							<a href="#URL_RUBRIQUE">#TITRE</a>
+						</li>
+					</BOUCLE_srub>
+					</ul>
+				</B_srub>
+			</div>
+		</BOUCLE_secteur>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Nos autres sites</h3>
+			<ul>
+			<li>
+				<a href="https://seinesaintdenis.fr">Le site du Conseil d&eacute;partemental</a>
+			</li>
+			<li>
+				<a href="https://lemag.seinesaintdenis.fr">Le site du magazine d&eacute;partemental</a>
+			</li>
+			<li>
+				<a href="https://data.seinesaintdenis.fr/">Open data Seine-Saint-Denis</a>
+			</li>
+			<li>
+				<a href="https://geoportail93.fr/">géoportail 93</a>
+			</li>
+			<li>
+				<a href="https://archives.seinesaintdenis.fr/">Archives Départementales</a>
+			</li>
+			<li>
+				<a href="https://patrimoine.seinesaintdenis.fr/colleges">Atlas des collèges</a>
+			</li>
+			<li>
+				<a href="https://patrimoine.seinesaintdenis.fr">Atlas du patrimoine</a>
+			</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67863691-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

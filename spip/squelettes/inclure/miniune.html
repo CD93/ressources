@@ -1,0 +1,51 @@
+<BOUCLE_secteur(RUBRIQUES){racine}{id_rubrique IN 9,31,16,11}{tout}>
+<div class="miniune row" id="rub#ID_RUBRIQUE">
+<header><h1><a href="#URL_RUBRIQUE">#INFO_TITRE{rubrique,#ID_RUBRIQUE}</a></h1></header>
+	<div class="col-md-12">
+		<BOUCLE_artune(ARTICLES){id_rubrique}{!par date}{0,1}>
+			[(#LOGO_ARTICLE|#URL_ARTICLE)]
+			<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+			#CHAPO
+		</BOUCLE_artune>
+	</div>
+	<div class="col-md-12 miniliste">
+	<B_srub>
+	<p class="blanc">Accès rapide</p>
+	<ul>
+	<BOUCLE_srub(RUBRIQUES){id_parent}{tout}>
+		<li>
+			<a href="#URL_RUBRIQUE">#TITRE</a><p><BOUCLE_art9(ARTICLES){enfants}/>#TOTAL_BOUCLE ressources<//B_art9></p>
+		</li>
+	</BOUCLE_srub>
+	</ul>
+	</B_srub>
+	</div>
+</div>
+
+</BOUCLE_secteur>
+
+<script type="text/javascript">
+	  $(document).ready(function(){
+	  	$('.miniune').hide();
+	  	$('#lienrub9').click(function() {
+	  		$('.miniune').hide();
+	  		$('#rub9').toggle();
+	  		return false;
+	  	});
+	  	$('#lienrub31').click(function() {
+	  			$('.miniune').hide();
+	  			$('#rub31').toggle();
+	  			return false;
+	  		});
+	  	$('#lienrub16').click(function() {
+	  			$('.miniune').hide();
+	  			$('#rub16').toggle();
+	  			return false;
+	  		});
+	  	$('#lienrub11').click(function() {
+	  			$('.miniune').hide();
+	  			$('#rub11').toggle();
+	  			return false;
+	  		});
+	  });
+</script>

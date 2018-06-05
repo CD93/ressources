@@ -1,0 +1,10 @@
+#CACHE{0}
+[(#SESSION{statut}|={0minireso}|?{'',' '})
+	#HTTP_HEADER{location:#URL_SITE}
+]
+#HTTP_HEADER{Content-Type: text/csv; charset=#CHARSET}
+#HTTP_HEADER{Content-Disposition: attachment; filename=liste_crp_(#DATE|affdate{'YmdHis'}).csv}
+"nom";"prenom";"email";"ajouté le";"structure";"type"
+
+<BOUCLE_contact(CONTACTS){tout}>"[(#NOM|replace{'"',''})]";"[(#PRENOM|replace{'"',''})]";"<BOUCLE_auteur(AUTEURS){id_auteur=#ID_AUTEUR}{tout}>[(#_auteur:EMAIL|replace{'"',''})]";"[(#DATE_INSCRIPTION|affdate)]";"<BOUCLE_struc(ORGANISATIONS){id_contact}{tout}>[(#NOM|replace{'"',''}|replace{'&#8217',''})]</BOUCLE_struc>";"<BOUCLE_type(MOTS){id_groupe=3}{id_auteur}{"|"}>[(#TITRE)]</BOUCLE_type>"</BOUCLE_auteur>
+</BOUCLE_contact>

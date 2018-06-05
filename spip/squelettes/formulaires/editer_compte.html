@@ -1,0 +1,50 @@
+<div class="formulaire_spip">
+[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur}) <:info_recommencer:></p>]
+<form action="[(#ENV{action})]" method="post">
+	#ACTION_FORMULAIRE{#ENV{action}}
+	[<input type="hidden" name="lang" value="(#ENV{lang})" />]
+	
+	<BOUCLE_contact(CONTACTS){id_auteur=#SESSION{id_auteur}}{tout}>
+	<div class="input-group">
+		
+	 	<input type="text" class="form-control"  name="nom" id="nom" value="#NOM" accesskey="4" autocapitalize="off" autocorrect="off" />
+	 	<div class="input-group-addon">Nom</div>
+	 </div>
+	 <div class="input-group">
+	 	
+	  	<input type="text" class="form-control"  name="prenom" id="prenom" value="#PRENOM" accesskey="5" autocapitalize="off" autocorrect="off" />
+	  	<div class="input-group-addon">Prénom</div>
+	  </div>
+	  <div class="input-group">
+	  	
+	   	<input type="text" class="form-control" name="email" id="email" value="#SESSION{email}" accesskey="6" autocapitalize="off" autocorrect="off" />
+	   	<div class="input-group-addon">Email</div>
+	   </div>
+	  <BOUCLE_struc(ORGANISATIONS){id_contact}{tout}>
+		  <div class="input-group">
+		  	
+		  	<input type="text" class="form-control" name="struc" id="struc" value="#NOM" accesskey="7" autocapitalize="off" autocorrect="off" />
+		  	<div class="input-group-addon">Organisation</div>
+		  </div>
+	  </BOUCLE_struc>
+	  <BOUCLE_type(MOTS){id_groupe=3}{id_auteur}>
+	  <div class="input-group">
+	  	
+	  	<select class="form-control" name="type" id="type">
+	  	<BOUCLE_liste_t(MOTS){id_groupe=3}>
+	  	  <option value="#ID_MOT" [(#ID_MOT|=={#_type:ID_MOT}|?{selected})]>#TITRE</option>
+	  	 </BOUCLE_liste_t>
+	  	</select>
+	  	<div class="input-group-addon">Type de partenaire </div>
+	  	</div>
+	  </BOUCLE_type>
+	  </BOUCLE_contact>
+	        <button class="btn btn-info" type="submit">Modifier</button>
+			<br/>
+			<br/>
+           <a href="#URL_PAGE{spip_pass}" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Changer mon mot de passe</a>
+
+</form>
+</div>
+

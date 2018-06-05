@@ -1,0 +1,38 @@
+<div class="larecherche enune">
+<B_autre>
+#ANCRE_PAGINATION
+<div class="moteur infosupp">
+	#FORMULAIRE_RECHERCHE
+</div>
+
+[<nav class="pagination ajax">(#PAGINATION)</nav>]
+<div class="row">
+<BOUCLE_autre(ARTICLES){recherche}{!par points}{pagination}>
+	<div class="col-md-24">
+	<article role="article">
+		<header>
+			<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+			<p class="motcle">
+			Mots-clés : <BOUCLE_mc(MOTS){id_groupe=5}{id_article}><a href="#URL_MOT">#TITRE</a>
+			</BOUCLE_mc>
+			</p>
+		</header>
+		<div class="content">
+		[(#CHAPO|couper{150})]
+		<p class="date_pub">Publié le <time datetime="#DATE" pubdate="pubdate">[(#DATE|affdate)]</time></p>
+			<a class="btn adroite suite" href="#URL_ARTICLE">Lire la suite</a>
+		</div>
+	</article>
+		<hr class="break"/>
+	</div>
+
+</BOUCLE_autre>
+</div>
+[<nav class="pagination ajax">(#PAGINATION)</nav>]
+</B_autre>
+<h3>Il n'y a aucun r&eacute;sultat</h3>
+<div class="moteur infosupp">
+	#FORMULAIRE_RECHERCHE
+</div>
+<//B_autre>
+</div>

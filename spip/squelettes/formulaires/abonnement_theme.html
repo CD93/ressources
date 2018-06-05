@@ -1,0 +1,29 @@
+<div class=' formulaire_#FORM bouton'>
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+	<BOUCLE_abo(MOTS){id_groupe=1}{id_mot=#ENV{id_mot}}{id_auteur=#SESSION{id_auteur}}>
+		<form method='post' action='#ENV{action}'>
+			#ACTION_FORMULAIRE{#ENV{action},#FORM}
+			<div id="formNewArt">
+				<div class="formSubmit">
+					<input type='hidden' id='ajouter' name='ajouter' value='non' />
+					<input type="hidden" id="id_auteur" name="id_auteur" value="#SESSION{'id_auteur'}" />
+					<button class="btn btn-success disabled active" type="submit " value="d&eacute;sabonnement"><span class="glyphicon glyphicon-ok"></span></button>
+					<button class="btn" type="submit" value="d&eacute;sabonnement"><span class="glyphicon glyphicon-remove"></span></button>
+				</div>
+			</div>
+		</form>
+	</BOUCLE_abo>
+		<form method='post' action='#ENV{action}'>
+			#ACTION_FORMULAIRE{#ENV{action},#FORM}
+			<div id="formNewArt">
+				<div class="formSubmit">
+					<input type='hidden' id='ajouter' name='ajouter' value='oui' />
+					<input type="hidden" id="id_auteur" name="id_auteur" value="#SESSION{'id_auteur'}" />
+					<button class="btn" type="submit"  value="abonnement"><span class="glyphicon glyphicon-ok"></span></button>
+					<button class="btn disabled active" type="submit" value="abonnement"><span class="glyphicon glyphicon-remove"></span></button>
+				</div>
+			</div>
+		</form>
+	<//B_abo>
+</div>

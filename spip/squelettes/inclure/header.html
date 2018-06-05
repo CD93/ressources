@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="author" content="">
+		<meta name="copyright" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, user-scalable=yes">
+		<title>#NOM_SITE_SPIP</title>
+		<meta name="description" content="[(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)]" />
+		<link rel="canonical" href="#URL_SITE_SPIP/">
+		<link rel="shortcut icon" href="favicon.ico">
+		<!-- Le styles -->
+			[<link rel="stylesheet" href="(#CSS{css/bootstrap.css})" type="text/css" />]
+			#INSERT_HEAD_CSS
+			[<link rel="stylesheet" href="(#CSS{css/styles.css})" type="text/css" />]
+			<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+			<!--[if lt IE 9]>
+		<script src="#CHEMIN{js/html5.js}"></script>
+		<script src="#CHEMIN{js/respond.min.js}"></script>
+			<![endif]-->
+		#INSERT_HEAD
+		<!-- JS in head not in footer : let SPIP optimize this -->
+		<script src="#CHEMIN{bootstrap/js/bootstrap-affix.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-alert.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-button.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-carousel.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-collapse.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-dropdown.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-modal.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-scrollspy.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-tab.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-tooltip.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-popover.js}"></script>
+		<script src="#CHEMIN{bootstrap/js/bootstrap-transition.js}"></script>
+		#SET{urlfontmo,https://fonts.googleapis.com/css?family=Montserrat:400,700}
+		[<link href="(#GET{urlfontmo}|copie_locale)" rel="stylesheet">]
+		#SET{urlfontme,https://fonts.googleapis.com/css?family=Merriweather}
+		[<link href="(#GET{urlfontmo}|copie_locale)" rel="stylesheet">]
+		<link rel="stylesheet" href="#CHEMIN{css/styles.css}" type="text/css" />
+		<!--[if lt IE 9]>
+		#SET{urlshim,https://html5shim.googlecode.com/svn/trunk/html5.js}
+			[<script src="(#GET{urlshim}|copie_locale)"></script>]
+		<![endif]-->
+		<!-- Piwik -->
+		<script type="text/javascript">
+		  var _paq = _paq || [];
+		  _paq.push(["setDomains", ["*.ressources.seinesaintdenis.fr"]]);
+		  _paq.push(['trackPageView']);
+		  _paq.push(['enableLinkTracking']);
+		  (function() {
+		    var u="//visites.seinesaintdenis.fr/";
+		    _paq.push(['setTrackerUrl', u+'piwik.php']);
+		    _paq.push(['setSiteId', '6']);
+		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		  })();
+		</script>
+		<noscript><p><img src="//visites.seinesaintdenis.fr/piwik.php?idsite=6" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
+
+	</head>

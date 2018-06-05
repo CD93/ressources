@@ -1,0 +1,108 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html" charset"iso-
+8859-15">
+</head>
+<body style="margin: 0; padding: 0;">
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td></td>
+        <td valign="top">
+             <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff">
+              <tr>
+                <td width="40" height="45"></td>
+                <td width="520"></td>
+                <td width="40"></td>
+              </tr>
+              <tr>
+               <td height="93" align="center" valign="top" colspan="3">
+                <img src="[(#CHEMIN{images/logo_mail.png}|url_absolue)]" />
+               </td>
+              </tr>
+              <tr>
+                <td height="30"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+              <td></td>
+              	<td>
+              		<span style="font-family: arial, sans-serif; font-size: 16px; color: #6c6c6c;">#INFO_TEXTE{rubrique,63}</span>
+              	</td>
+              <td></td>
+              </tr>
+              <tr>
+                <td height="30"></td>
+                <td></td>
+                <td></td>
+              </tr>
+                  <tr>
+                    <td></td>
+                    <td valign="top">
+                        <table width="520" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td height="40" valign="top" width="31" bgcolor="#bab5af">
+                                    <img src="#CHEMIN{images/corner_white.png}" />
+                                </td>
+                                <td width="470" valign="middle">
+                                    <table  cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="240" height="40" bgcolor="#bab5af" style="font-family: arial, sans-serif; font-size: 18px; color: #ffffff;">Les derni&egrave;res actualit&eacute;s</td>
+                                            <td width="230"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="25"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td></td>
+                  </tr>
+<BOUCLE_rub(RUBRIQUES){id_rubrique=63}{tous}>
+ <BOUCLE_articles(ARTICLES){enfants}{tous}{!par date}>
+ 	<tr>
+ 	                            <td height="35"></td>
+ 	                            <td></td>
+ 	                            <td></td>
+ 	                        </tr>
+ 	                        <tr>
+ 	                            <td></td>
+ 	                            <td valign="top">
+ 	                                <h3 style="margin-top: 0 !important; margin-bottom: 0 !important;font-family: Arial, sans-serif; font-size:17px; font-weight: bold; color: #53568c; display: inline;"><a href="[(#URL_ARTICLE|url_absolue)]" style="text-decoration: none;margin-top: 0 !important; margin-bottom: 0 !important; font-family: Arial, sans-serif; font-size:17px; font-weight: bold; color: #53568c; display: inline;">#TITRE</a></h3><br />
+ 	                                <span style="font-family: Arial, sans-serif; font-weight: 400; font-size: 12px; color: #6c6c6c;">publi&eacute;e le [(#DATE|affdate)]</span>
+ 	                            </td>
+ 	                            <td></td>
+ 	                        </tr>
+ 	                        <tr>
+ 	                            <td height="10"></td>
+ 	                            <td></td>
+ 	                            <td></td>
+ 	                        </tr>
+ 	                        <tr>
+ 	                            <td></td>
+ 	                            <td valign="top">
+ 	                                <div style="font-family: tahoma, Times, serif; font-weight: 400; font-size: 14px; color: #6c6c6c; line-height: 20px;">#CHAPO</div>
+ 	                            </td>
+ 	                            <td></td>
+ 	                        </tr>
+ 	                        <tr>
+ 	                            <td height="25"></td>
+ 	                            <td></td>
+ 	                            <td></td>
+ 	                        </tr>
+ 	                        <tr>
+ 	                            <td></td>
+ 	                            <td valign="top">
+ 	                                <span style="display: inline-block; color: #002b6f; text-align:center; font-family: tahoma, Times, serif; font-size:12px;border: 2px solid #002b6f; padding-right: 13px; padding-left:13px; line-height: 25px; height: 25px; border-radius: 14px; -moz-border-radius: 14px; -webkit-border-radius: 14px;"><a href="[(#URL_ARTICLE|url_absolue)]" style="color: #002b6f; text-decoration: none;">lire la suite</a></span>
+ 	                            </td>
+ 	                            <td></td>
+ 	                        </tr>           
+ </BOUCLE_articles>
+ </BOUCLE_rub>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+            

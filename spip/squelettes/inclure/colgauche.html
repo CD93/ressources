@@ -1,0 +1,40 @@
+<div class="col-md-5 colgauche">
+	<aside role="region">
+	<B_contact>
+	<div class="ident">
+	Bienvenue
+		<BOUCLE_contact(CONTACTS){id_auteur=#SESSION{id_auteur}}{tout}>
+			[<img src="#URL_SITE_SPIP/(#LOGO_AUTEUR|image_passe_partout{100,100}
+			    |image_recadre{100,100,center}|extraire_attribut{src})" alt="photo de profil" class="img-circle logo_aut">]
+			<h3>#PRENOM #NOM </h3>
+			<div class="struc">
+			<BOUCLE_struc(ORGANISATIONS){id_contact}{tout}>
+				#NOM
+			</BOUCLE_struc>
+			</div>
+			<a href="#URL_AUTEUR">> mon compte</a>
+			[<a href="(#URL_LOGOUT)">> déconnexion</a>]
+
+				[<hr/>(#INCLURE{fond=inclure/monespace}{env}{id_auteur}{ajax})]
+				
+				[<hr/>(#INCLURE{fond=inclure/liensutils}{env}{id_auteur}{ajax})]
+				[<hr/>(#INCLURE{fond=inclure/mesfavoris}{env}{id_auteur}{ajax})]
+		</BOUCLE_contact>
+	</div>
+	</B_contact>
+	[(#SESSION{id_auteur}|?{'',' '})
+		<h3>Connectez-vous pour accéder à l'ensemble des ressources</h3>
+		#LOGIN_PUBLIC
+		<hr/>
+		<h3>Pas encore de compte ?</h3>
+		<a class="btn" href="#URL_PAGE{inscription}">Je m'inscris</a>
+		<hr/>
+		<p>
+		Bienvenue sur le centre de ressources des partenaires du Conseil départemental de la Seine-Saint-Denis.
+		En vous connectant, vous pourrez bénéficier de l'ensemble des ressources du site, d'une page d'accueil personnalisée et vous abonner à des alertes sur des thématiques que vous aurez choisies.
+		L'inscription au centre de ressources est ouverte à tous.
+		</p>
+		[<hr/>(#INCLURE{fond=inclure/liensutils}{env}{id_auteur})]
+	]
+	</aside>
+</div>

@@ -1,0 +1,37 @@
+<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
+<INCLURE{fond=inclure/header} />
+<body role="document">
+	<div class="container" >
+		<INCLURE{fond=inclure/tetiere} />
+		<div class="row">
+			<INCLURE{fond=inclure/colgauche} />
+			<div class="col-md-14 page_auteur">
+			[(#SESSION{id_auteur}|?{' ',''})
+				<h2>Mon profil</h2>
+				<div class="ajax">
+					#FORMULAIRE_EDITER_COMPTE{#ID_AUTEUR}
+				</div>
+				<h2>Mes abonnements th&eacute;matiques <div class="ajax">#FORMULAIRE_PUSH_THEME</div> <em><small>(recevoir une alerte)</small></em></h2>
+				
+				<ul>
+				]
+				<BOUCLE_secteur(RUBRIQUES){id_rubrique IN 9,31,16,11}{tout}{"<br/>"} {si #SESSION{id_auteur}}>
+						<li><h3>#TITRE</h3></li>
+						<ul>	
+							<BOUCLE_srub(RUBRIQUES){id_parent}{tout}>
+								<li><div class="ajax">#FORMULAIRE_ABONNEMENT_THEME{#ID_RUBRIQUE}</div> #TITRE</li>							
+							</BOUCLE_srub>	
+						</ul>
+				</BOUCLE_secteur>
+				</ul>
+				
+			</div>
+			<INCLURE{fond=inclure/coldroite}{env}{ajax} />
+		</div>
+	</div>
+	<footer>
+		<INCLURE{fond=inclure/footer}{env}{ajax} />
+	</footer>
+</body>		
+</html>
+</BOUCLE_auteur>

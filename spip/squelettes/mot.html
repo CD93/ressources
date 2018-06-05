@@ -1,0 +1,25 @@
+<BOUCLE_rubrique(MOTS){id_mot}{tout}>
+<INCLURE{fond=inclure/header} />
+<body role="document">
+	<div class="container" >
+		<INCLURE{fond=inclure/tetiere} />
+		<div class="row">
+			<INCLURE{fond=inclure/colgauche} />
+			<main class="col-md-14">
+			<header>
+				#LOGO_MOT
+				 <h3>#TYPE</h3>
+				<h1>#TITRE</h1>
+			</header>
+				<INCLURE{fond=inclure/listemot}{env}{ajax} />
+			</main>
+			<INCLURE{fond=inclure/coldroite}{env}{ajax} />
+		</div>
+	</div>
+	<footer>
+		<INCLURE{fond=inclure/footer}{env}{ajax} />
+	</footer>
+</body>		
+</html>
+</BOUCLE_rubrique>
+	

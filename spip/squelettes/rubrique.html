@@ -1,0 +1,42 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
+<INCLURE{fond=inclure/header} />
+<body role="document">
+	<div class="container" >
+		<INCLURE{fond=inclure/tetiere} />
+		<div class="row">
+			<INCLURE{fond=inclure/colgauche} />
+			<main class="col-md-14">
+			<header>
+				#LOGO_RUBRIQUE
+				<h1>#TITRE</h1>
+			</header>
+				<B_srub>
+					<div class="miniliste col-md-24">
+					<p class="blanc">Accès rapide</p>
+						<ul>
+						<BOUCLE_srub(RUBRIQUES){id_parent}{par titre}>
+							<li>
+								<a href="#URL_RUBRIQUE">#TITRE</a><p><BOUCLE_art9(ARTICLES){enfants}/>#TOTAL_BOUCLE ressources<//B_art9></p>
+							</li>
+						</BOUCLE_srub>
+						</ul>
+					</div>
+
+				</B_srub>
+				[(#ID_PARENT|=={0}|?{' ',''})
+				<hr/>
+					<h1>Les ressources transverses</h1>
+				]
+					<INCLURE{fond=inclure/listerub}{env}{ajax} />
+
+
+			</main>
+			<INCLURE{fond=inclure/coldroite}{env}{ajax} />
+		</div>
+	</div>
+	<footer>
+		<INCLURE{fond=inclure/footer}{env}{ajax} />
+	</footer>
+</body>
+</html>
+</BOUCLE_rubrique>

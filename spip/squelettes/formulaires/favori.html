@@ -1,0 +1,19 @@
+<div class="favo ajax">
+[(#ENV**{editable}|oui)
+	<form action="#ENV{action}" method="post">
+		#ACTION_FORMULAIRE{#SELF}
+		<div>
+			[(#ENV{_deja_favori}|non)
+			<button type='submit' class="btn" name="ajouter" value="<:mesfavoris:add_to|attribut_html:>" title="<:mesfavoris:add_to|attribut_html:>">
+				<span class="glyphicon glyphicon-star"aria-hidden="true"></span>  Ajouter &agrave; ma s&eacute;lection
+				
+			</button>
+			][(#ENV{_deja_favori}|oui)
+			<button type='submit' class="btn" name="retirer" value="<:mesfavoris:remove_from|attribut_html:>" title="<:mesfavoris:remove_from|attribut_html:>">
+				<span class="glyphicon glyphicon-star-empty"aria-hidden="true"></span>  Retirer de ma s&eacute;lection
+			</button>
+			]
+		</div>
+	</form>
+]
+</div>
