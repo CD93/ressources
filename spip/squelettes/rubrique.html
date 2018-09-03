@@ -1,5 +1,13 @@
 <BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
-<INCLURE{fond=inclure/header} />
+#SET{titre,""}	
+<BOUCLE_pd(RUBRIQUES){parents_directs}{" / "}>
+	#SET{titre,#GET{titre}|concat{#TITRE}}
+	</BOUCLE_pd>
+	#SET{titre,#GET{titre}|concat{" / "}|concat{#TITRE}}
+	</B_pd>
+	#SET{titre,#TITRE}
+	<//B_pd>
+	<INCLURE{fond=inclure/header}{titre=#GET{titre}}/>	
 <body role="document">
 	<div class="container" >
 		<INCLURE{fond=inclure/tetiere} />

@@ -1,5 +1,9 @@
 <BOUCLE_article(ARTICLES){id_article}>
-<INCLURE{fond=inclure/header}/>
+#SET{titre,""}<BOUCLE_pd(RUBRIQUES){id_rubrique}{parents_directs}{" / "}>
+#SET{titre,#GET{titre}|concat{#TITRE}}
+</BOUCLE_pd>
+#SET{titre,#GET{titre}|concat{" / "}|concat{#TITRE}}
+<INCLURE{fond=inclure/header}{titre=#GET{titre}}/>
 	<body role="document">
 		<div class="container" >
 			<INCLURE{fond=inclure/tetiere} />

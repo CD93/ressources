@@ -1,4 +1,9 @@
-<INCLURE{fond=inclure/header} />
+#SET{titre,recherche}
+#SET{total,0}
+#SET{rech,#ENV{recherche}}
+<BOUCLE_rech(ARTICLES){recherche}>#SET{total,#GRAND_TOTAL}</BOUCLE_rech>
+#SET{titre,#GET{titre}|concat{" / "}|concat{#GET{rech}}|concat{" / "}|concat{#GET{total}}|concat{" résultat(s)"}}
+<INCLURE{fond=inclure/header}{titre=#GET{titre}} />
 <body role="document">
 	<div class="container" >
 		<INCLURE{fond=inclure/tetiere} />
