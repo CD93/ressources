@@ -52,7 +52,7 @@
 		    var u="//visites.seinesaintdenis.fr/";
 		    _paq.push(['setTrackerUrl', u+'visite.php']);
 		    _paq.push(['setSiteId', '6']);
-			_paq.push(['setDocumentTitle', "#ENV{titre}"]);
+			_paq.push(['setDocumentTitle', "[(#ENV{titre}|texte_script)]"]);
 		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'visite.js'; s.parentNode.insertBefore(g,s);
 		  })();
