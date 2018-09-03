@@ -6,7 +6,7 @@
 		<meta name="author" content="">
 		<meta name="copyright" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, user-scalable=yes">
-		<title>[(#ENV{titre}) ][#NOM_SITE_SPIP]</title>
+		<title>[(#ENV{titrehead}) ][#NOM_SITE_SPIP]</title>
 		<meta name="description" content="[(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)]" />
 		<link rel="canonical" href="#URL_SITE_SPIP/">
 		<link rel="shortcut icon" href="favicon.ico">
@@ -52,6 +52,7 @@
 		    var u="//visites.seinesaintdenis.fr/";
 		    _paq.push(['setTrackerUrl', u+'visite.php']);
 		    _paq.push(['setSiteId', '6']);
+			_paq.push(['setDocumentTitle', "#ENV{titre}"]);
 		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'visite.js'; s.parentNode.insertBefore(g,s);
 		  })();

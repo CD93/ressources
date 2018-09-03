@@ -3,7 +3,7 @@
 #SET{titre,#GET{titre}|concat{#TITRE}}
 </BOUCLE_pd>
 #SET{titre,#GET{titre}|concat{" / "}|concat{#TITRE}}
-<INCLURE{fond=inclure/header}{titre=#GET{titre}}/>
+<INCLURE{fond=inclure/header}{titre=#GET{titre}}{titrehead=#TITRE}/>
 	<body role="document">
 		<div class="container" >
 			<INCLURE{fond=inclure/tetiere} />
