@@ -1,0 +1,64 @@
+Only in ../plugins/fabrique_auto/.backup/abonmt/: .DS_Store
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/abonmt_pipelines.php ../plugins/fabrique_auto/abonmt/abonmt_pipelines.php
+12a13,14
+>
+>
+14,17d15
+< function abonmt_taches_generales_cron($taches){
+< 	$taches['abonmt_maintenance'] = 60; // tous les jours
+< 	return $taches;
+< }
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/base/abonmt.php ../plugins/fabrique_auto/abonmt/base/abonmt.php
+51a52
+> 			"obj"                => "varchar(25) NOT NULL DEFAULT 'rubrique'",
+59,60c60,61
+< 		'champs_editables'  => array('periodicite', 'suspension', 'aborub', 'id_aut'),
+< 		'champs_versionnes' => array('periodicite', 'suspension', 'aborub', 'id_aut'),
+---
+> 		'champs_editables'  => array('periodicite', 'suspension', 'aborub', 'id_aut', 'obj'),
+> 		'champs_versionnes' => array('periodicite', 'suspension', 'aborub', 'id_aut', 'obj'),
+Only in ../plugins/fabrique_auto/.backup/abonmt/formulaires: abonnement_art.html
+Only in ../plugins/fabrique_auto/.backup/abonmt/formulaires: abonnement_art.php
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/formulaires/editer_abonnement.html ../plugins/fabrique_auto/abonmt/formulaires/editer_abonnement.html
+18a19,22
+> 			[(#SAISIE{selection, obj, obligatoire=oui,
+> 				label=<:abonnement:label_obj:>,
+> 				explication=<:abonnement:explication_obj:> })]
+>
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/formulaires/editer_abonnement.php ../plugins/fabrique_auto/abonmt/formulaires/editer_abonnement.php
+89c89
+< 	return formulaires_editer_objet_verifier('abonnement',$id_abonnement, array('periodicite', 'suspension'));
+---
+> 	return formulaires_editer_objet_verifier('abonnement',$id_abonnement, array('periodicite', 'suspension', 'obj'));
+Only in ../plugins/fabrique_auto/.backup/abonmt/: genie
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/lang/abonnement_fr.php ../plugins/fabrique_auto/abonmt/lang/abonnement_fr.php
+11a12,14
+> 	// E
+> 	'explication_obj' => 'datas=[(#ARRAY{clerub,\'rubrique\',cleart,\'article\',clemot,\'mot\'})]',
+>
+22a26
+> 	'label_obj' => 'objet',
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/paquet.xml ../plugins/fabrique_auto/abonmt/paquet.xml
+4c4
+< 	version="1.0.0"
+---
+> 	version="1.0.2"
+9c9
+< 	schema="1.0.0"
+---
+> 	schema="1.0.2"
+12c12
+< 		Paquet genere le 2013-12-02 12:19:57
+---
+> 		Paquet genere le 2013-12-05 11:09:24
+23c23
+< 	<pipeline nom="taches_generales_cron" inclure="abonmt_pipelines.php" />
+---
+>
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_abonmt.php ../plugins/fabrique_auto/.backup/abonmt/prive/objets/contenu/abonnement.html ../plugins/fabrique_auto/abonmt/prive/objets/contenu/abonnement.html
+22a23,27
+> [<div class="champ contenu_obj[ (#OBJ*|strlen|?{'',vide})]">
+> 	<label><:abonnement:label_obj:> : </label>
+> 	<span dir='#LANG_DIR' class='#EDIT{obj} obj'>(#OBJ)</span>
+> </div>]
+>

@@ -1,0 +1,21 @@
+<paquet
+	prefix="push"
+	categorie="communication"
+	version="1.0.0"
+	schema="1.0.0"
+	etat="test"
+	compatibilite="[3.0.0;3.1.*]"
+	logo=""
+	documentation=""
+>
+	<nom>Push</nom>
+	<licence>GNU</licence>
+
+	<auteur>Damien</auteur>
+	<auteur>Samuel</auteur>
+
+	<pipeline nom="taches_generales_cron" inclure="push_pipelines.php" />
+	
+
+	<necessite nom="facteur" compatibilite="[3.4.6;]" />
+</paquet>
