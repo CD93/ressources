@@ -1,4 +1,4 @@
-<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 	<head>
@@ -14,7 +14,7 @@
 		<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>*|MC:SUBJECT|*</title>
+		<title>#TITRE [#NOM_SITE_SPIP]</title>
 
     <style type="text/css">
 		p{
@@ -558,7 +558,7 @@
 						<![endif]-->
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
                             <tr>
-                                <td valign="top" id="templatePreheader"></td>
+                                <td valign="top" style="text-align:center" id="templatePreheader"></td>
                             </tr>
                             <tr>
                                 <td valign="top" id="templateHeader"><table class="mcnImageBlock" style="min-width:100%;" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -569,8 +569,8 @@
                         <tbody><tr>
                             <td class="mcnImageContent" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;" valign="top">
 
-
-                                        <img alt="" src="[(#LOGO_RUBRIQUE|extraire_attribut{"src"})]" style=" max-width:564px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage" align="middle">
+								<a href="[(#URL_RUBRIQUE|parametre_url{utm_source,newsletter#_rubrique:ID_RUBRIQUE}|parametre_url{utm_campain,crp#_rubrique:ID_PARENT}|parametre_url{utm_medium,email}|parametre_url{utm_content,lientexte}|url_absolue)]" title="" class="" style="color: #002B6F;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;font-style: normal;font-weight: normal;" target="_blank">Voir la newsletter dans un navigateur</a>
+                                <img alt="" src="[(#LOGO_RUBRIQUE|extraire_attribut{"src"})]" style=" max-width:564px; padding-bottom: 0;padding-top: 5px; display: inline !important; vertical-align: bottom;" class="mcnImage" align="middle">
 
 
                             </td>
@@ -597,10 +597,10 @@
                 <table style="max-width:100%; min-width:100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
                     <tbody><tr>
 
-                        <td class="" style="padding: 0px 18px 9px;color: #222222;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 20px;font-style: italic;font-weight: normal;" valign="top">
-
-                            <p style="color: #222222;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 20px;font-style: italic;font-weight: normal;">#TEXTE</p>
-
+							<td class="" style="padding: 0px 18px 9px;color: #222222;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 16px;font-style: normal;font-weight: normal;" valign="top">
+								<p style="color: #222222;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 20px;font-style: normal;font-weight: bold;">#TITRE</p>
+								<p style="color: #222222;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 16px;font-style: normal;font-weight: normal;">#TEXTE</p>
+	
                         </td>
                     </tr>
                 </tbody></table>
@@ -654,7 +654,7 @@
 
 											<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #53568C;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 17px;font-style: normal;font-weight: bold;" valign="top">
 
-													<h3 style="margin-top: 0 !important; margin-bottom: 0 !important;font-family: Arial, sans-serif; font-size:17px; font-weight: bold; color: #53568c; display: inline;"><a href="[(#URL|url_absolue)]" style="text-decoration: none;margin-top: 0 !important; margin-bottom: 0 !important; font-family: Arial, sans-serif; font-size:17px; font-weight: bold; color: #53568c; display: inline;">#TITRE</a></h3>
+													<h3 style="margin-top: 0 !important; margin-bottom: 0 !important;font-family: Arial, sans-serif; font-size:17px; font-weight: bold; color: #53568c; display: inline;"><a href="[(#URL|parametre_url{utm_source,newsletter#_rubrique:ID_RUBRIQUE}|parametre_url{utm_campain,crp#_rubrique:ID_PARENT}|parametre_url{utm_medium,email}|parametre_url{utm_content,lientexte}|url_absolue)]" style="text-decoration: none;margin-top: 0 !important; margin-bottom: 0 !important; font-family: Arial, sans-serif; font-size:17px; font-weight: bold; color: #53568c; display: inline;">#TITRE</a></h3>
 
 											</td>
                     </tr>
@@ -673,7 +673,7 @@
 </table><table class="mcnCaptionBlock" width="100%" cellspacing="0" cellpadding="0" border="0">
     <tbody class="mcnCaptionBlockOuter">
         <tr>
-            <td class="mcnCaptionBlockInner" style="padding:9px;" valign="top">
+            <td class="mcnCaptionBlockInner" style="padding-bottom:9px;" valign="top">
 
 
 
@@ -681,13 +681,13 @@
 <table class="mcnCaptionRightContentOuter" width="100%" cellspacing="0" cellpadding="0" border="0">
     <tbody><tr>
         <td class="mcnCaptionRightContentInner" style="padding:0 9px ;" valign="top">
-					<table class="mcnCaptionRightImageContentContainer" width="264" cellspacing="0" cellpadding="0" border="0" align="left">
+					<table class="mcnCaptionRightImageContentContainer" width="300" cellspacing="0" cellpadding="0" border="0" align="left">
 							<tbody><tr>
 									<td class="mcnCaptionRightImageContent" valign="top" align="center">
 
 
 
-											<img alt="" src="[(#LOGO_SELECTIONS_CONTENU|image_passe_partout{260,260}|image_recadre{260,260,center}|extraire_attribut{src})]" style="max-width:300px;" class="mcnImage" width="564" >
+											<img alt="" src="[(#LOGO_SELECTIONS_CONTENU|image_passe_partout{300,0}|extraire_attribut{src})]" style="max-width:300px;" class="mcnImage" width="300" >
 
 
 
@@ -719,7 +719,7 @@
                     <tbody>
                         <tr>
                             <td class="mcnButtonContent" style="font-family: Arial; font-size: 14px; padding: 10px;" valign="middle" align="center">
-                                <a class="mcnButton " title="Lire la suite" href="[(#URL|url_absolue)]" target="_blank" style="font-weight: normal;letter-spacing: 0px;line-height: 100%;text-align: center;text-decoration: none;color: #002B6F;">Lire la suite</a>
+                                <a class="mcnButton " title="[(#TITRE|couper{50})]" href="[(#URL|parametre_url{utm_source,newsletter#_rubrique:ID_RUBRIQUE}|parametre_url{utm_campain,crp#_rubrique:ID_PARENT}|parametre_url{utm_medium,email}|parametre_url{utm_content,lienbouton}|url_absolue)]" target="_blank" style="font-weight: normal;letter-spacing: 0px;line-height: 100%;text-align: center;text-decoration: none;color: #002B6F;">Lire la suite</a>
                             </td>
                         </tr>
                     </tbody>
@@ -751,7 +751,9 @@
 </td>
                             </tr>
                             <tr>
-                                <td valign="top" id="templateFooter"></td>
+								<td valign="top" id="templateFooter" style="text-align:center">
+									<a style="color: #002B6F;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;font-style: normal;font-weight: normal;" href="!_desaclientall_!">Se désinscrire</a></td>
+								</td>
                             </tr>
                         </table>
 						<!--[if (gte mso 9)|(IE)]>
