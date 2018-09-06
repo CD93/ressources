@@ -4,7 +4,7 @@
 	<hr/>
 	<div class="row">
 		<BOUCLE_secteur(RUBRIQUES){racine}{id_rubrique IN 9,31,16,11,77}{tout}>
-			<div class="col-md-8">
+			<div class="col-md-8 col-sm-12">
 				<a href="#URL_RUBRIQUE"><h3>#TITRE</h3></a>
 				<B_srub>
 					<ul>
@@ -16,8 +16,10 @@
 					</ul>
 				</B_srub>
 			</div>
+			[(#COMPTEUR_BOUCLE|=={3}|oui)<div class="hidden-sm"><hr class="clear"/></div>]
+			[(#COMPTEUR_BOUCLE|plus{1}|modulo{2}|oui)<div class="hidden-md hidden-lg"><hr class="clear"/></div>]
 		</BOUCLE_secteur>
-		<div class="col-md-8">
+		<div class="col-md-8 col-sm-12">
 			<h3>Nos autres sites</h3>
 			<ul>
 			<li>
