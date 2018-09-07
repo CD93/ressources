@@ -2,4 +2,5 @@
         <nom>Newsletter avec des petites images </nom>
         <description>Composition adaptée aux NL</description>
         <icon></icon>
+        <branche type="rubrique" composition="nl-librept" />
 </composition>
