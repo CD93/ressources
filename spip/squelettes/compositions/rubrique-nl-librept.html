@@ -704,10 +704,11 @@
                     <tbody><tr>
 
                         <td class="mcnTextContent" style="padding: 0px 18px 9px;color: #6C6C6C;font-family: Tahoma, Verdana, Segoe, sans-serif;font-size: 14px;" valign="top">
-								<BOUCLE_artsel(ARTICLES){si #OBJET|=={article}}{id_article=#ID_ARTICLE}>
-									#SET{chapo,#CHAPO}	
-								</BOUCLE_artsel>
-								[(#DESCRIPTIF|?{#DESCRIPTIF,#GET{chapo}})]
+							#SET{chapo,""}	
+							<BOUCLE_artsel(ARTICLES){si #OBJET|=={article}}{id_article=#ID_ARTICLE}{tout}>
+								#SET{chapo,#CHAPO}	
+							</BOUCLE_artsel>
+							[(#DESCRIPTIF|?{#DESCRIPTIF,#GET{chapo}})]
                         </td>
                     </tr>
                 </tbody></table>
